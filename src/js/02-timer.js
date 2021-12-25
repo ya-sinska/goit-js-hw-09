@@ -1,5 +1,6 @@
 import flatpickr from "flatpickr";
 import 'flatpickr/dist/flatpickr.min.css';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
     btnStart: document.querySelector('button'),
@@ -25,7 +26,7 @@ const options = {
             // Слухач для кнопки
             refs.btnStart.addEventListener('click', onBtnStartClick)
         } else {
-            alert("Please choose a date in the future")
+            Notify.warning('Please choose a date in the future');
             console.log('старт відхилено не вірно вказана дата');
         }
   },
